@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"> -->
+  <title>Book List</title>
+</head>
+
+<body>
+
+<header>
+  <button onclick="dialog.showModal()"id="main-button">+</button>
+  <!-- <button onclick="dialog.showModal()" >+</button> -->
+    <h1>Book List</h1>
+
+    <input type="text" class="search-bar" label="search" placeholder="SEARCH...">
+</header>
+
+
+  <dialog method="dialog" id="dialog">
+    <form>
+      <select name="category" id="category">
+        <option value="choose category">Choose Category</option>
+        <option value="coding" style="background-color: aqua">Coding</option>
+        <option value="business" style="background-color: rgba(190, 6, 251, 0.5)">Business</option>
+        <option value="self-growth" style="background-color: rgb(117, 253, 147)">Self-Growth</option>
+        <option value="novel" style="background-color: rgb(245, 248, 94)">Novel</option>
+        <option value="classic" style="background-color: rgba(48, 143, 62, 0.4)">Classic</option>
+      </select>
+     <div class="information">
+      <label for="title">Title</label>
+      <input type="text" name="title-input">
+      <label for="author">Author</label>
+      <input type="text"  name="author-input">
+    </div>
+    <button type="submit" id="save">save</button>
+    <!-- <button type="button" id="close">CLOSE</button> -->
+
+    </form>
+  </dialog>
+
+<main>
+  <!-- record-container -->
+  <div class="books-panel">
+
+<!-- record-item -->
+    <div class="book-card">
+      <p id="title">Title:</p>
+      <p id="author">Author:</p>
+    </div>
+
+<!--
+  <div class = "record-item">
+    <div class = "record-el">
+        <span id = "labelling">Contact ID: </span>
+        <span id = "contact-id-content">1</span>
+  </div> -->
+
+  </div>
+</main>
+<template id="book">
+  <div class="book-card">
+    <p class="title"> `Title: ${item}`</p>
+    <p class="author">Author: </p>
+  </div>
+</template>
+  <script src="index.js"></script>
+</body>
+
+</html>
