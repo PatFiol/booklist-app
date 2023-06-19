@@ -9,10 +9,9 @@ const bookList = JSON.parse(localStorage.getItem('books')) || []
 
 displayBooks(bookList)
 
-let books = []
 saveBtn.addEventListener('click', function() {
-	const title = titleInput.value.trim()
-	const author = authorInput.value.trim()
+	const title = titleInput.value;
+	const author = authorInput.value;
 	// const category = selectCategory.value.trim()
 
 	if (title !== '' && author !== '') {
@@ -25,7 +24,6 @@ saveBtn.addEventListener('click', function() {
 		bookList.push(book)
 		localStorage.setItem('books', JSON.stringify(bookList))
 		displayBooks(bookList)
-
 		titleInput.value = ''
 		authorInput.value = ''
 		// selectCategory.value = ''
@@ -33,8 +31,9 @@ saveBtn.addEventListener('click', function() {
 })
 
 
+
 function displayBooks(books) {
-	bookList.innerHTML = ''
+	booksPanel.innerHTML = ''
 
 	books.forEach(book => {
 		const bookCard = document.createElement('div')
