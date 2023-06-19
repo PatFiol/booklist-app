@@ -52,12 +52,10 @@ font-size: 2rem;
 
 .book-card {
   width: 100%;
-  background-color:wheat;
+  background-color: transparent;
   padding: 1em;
   margin: 1em auto;
 }
-
-
 
 
 /* OVERLAY */
@@ -102,11 +100,18 @@ dialog select {
   width: 100%;
   height: 2.5em;
   margin-bottom: 2em;
+  border-radius: .3em;
+  border: none;
+  padding: 1em;
 }
 .information label {
   color: var(--light-color);
   font-size: 1.1em;
-  /* margin: 0; */
+}
+
+.information input:focus {
+  filter: invert();
+  outline: none;
 }
 
 dialog button {
@@ -123,9 +128,6 @@ dialog button {
 
 #save:hover {
   filter: invert();
-}
-#close:focus {
-  filter: sepia();
 }
 
 #close {

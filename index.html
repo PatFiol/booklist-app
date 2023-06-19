@@ -23,7 +23,7 @@
 
 
   <dialog method="dialog" id="dialog">
-    <form>
+
       <select name="category" id="category">
         <option value="choose category">Choose Category</option>
         <option value="coding" style="background-color: aqua">Coding</option>
@@ -34,42 +34,21 @@
       </select>
      <div class="information">
       <label for="title">Title</label>
-      <input type="text" name="title-input">
+      <input type="text" id="title-input">
       <label for="author">Author</label>
-      <input type="text"  name="author-input">
+      <input type="text" id="author-input">
     </div>
-    <button type="submit" id="save">save</button>
-    <!-- <button type="button" id="close">CLOSE</button> -->
+    <button type="click" id="save">save</button>
+    <button type="button" id="close">CLOSE</button>
 
-    </form>
   </dialog>
 
 <main>
-  <!-- record-container -->
-  <div class="books-panel">
-
-<!-- record-item -->
-    <div class="book-card">
-      <p id="title">Title:</p>
-      <p id="author">Author:</p>
-    </div>
-
-<!--
-  <div class = "record-item">
-    <div class = "record-el">
-        <span id = "labelling">Contact ID: </span>
-        <span id = "contact-id-content">1</span>
-  </div> -->
+  <div id="books-panel">
 
   </div>
 </main>
-<template id="book">
-  <div class="book-card">
-    <p class="title"> `Title: ${item}`</p>
-    <p class="author">Author: </p>
-  </div>
-</template>
-  <script src="index.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>
