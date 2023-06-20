@@ -1,6 +1,7 @@
 :root {
   --light-color: hsl(41, 17%, 95%);
   --dark-color: hsla(42, 72%, 7%, 0.68);
+  --yellow-paper-color: hsla(39, 77%, 83%, 0.8);
   --medium-color: hsl(41, 25%, 25%);
   --border-radius: 1em;
 }
@@ -17,6 +18,7 @@ body {
   width: 100vw;
   display: flex;
   flex-flow: column nowrap;
+  background: var(--light-color);
 }
 
 h1 {
@@ -39,25 +41,52 @@ font-size: 2rem;
   padding-right: .4em;
 }
 
-.books-panel {
-  background-color: rgba(232, 232, 209, 0.826) ;
+/* Books */
+#books-panel {
+  width: fit-content;
   padding: 1em;
   margin: 2em;
   height: fit-content;
   min-height: 6em;
   display: flex;
-  flex-wrap: wrap;
-  /* gap: 1em; */
+  flex-flow: row wrap;
+  justify-content: center;
 }
 
+/* BOOK CARDS */
 .book-card {
-  width: 100%;
-  background-color: transparent;
+  position: relative;
+  width: 400px;
   padding: 1em;
-  margin: 1em auto;
-  background-color:aqua;
+  margin: 1em;
+  background-color: rgba(232, 232, 209, 0.8);
+  box-shadow: -1px 1px 10px ;
+  display: grid;
 }
 
+fieldset {
+  position: absolute;
+  border-radius: .2em;
+  background-color: white;
+  height: fit-content;
+  width: fit-content;
+  align-self: end;
+
+}
+
+.deleteBtn {
+  padding: .5em;
+  margin-left: 100%;
+  border-radius: 50%;
+  border: 1px solid red;
+  background-image: url(assets/delete-icon.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 1.3em;
+  height: 2rem;
+  width: 2rem;
+  cursor: pointer;
+}
 
 /* OVERLAY */
 dialog {
@@ -69,7 +98,7 @@ dialog {
   border: 1em;
   border-radius: var(--border-radius);
   box-shadow: 1px 1px 5px;
-  animation: dialog 1s ease-in;
+  animation: dialog .8s ease-in-out;
 }
 
 @keyframes dialog {
@@ -89,6 +118,13 @@ dialog select {
   font-weight: 600;
   font-size: 1.2rem;
   float: right;
+}
+
+.category {
+  float: right;
+  display: grid;
+  gap: .2em;
+  color: var(--light-color);
 }
 
 .information {

@@ -12,13 +12,13 @@ displayBooks(bookList)
 saveBtn.addEventListener('click', function() {
 	const title = titleInput.value;
 	const author = authorInput.value;
-	// const category = selectCategory.value.trim()
+	const category = selectCategory.value
 
-	if (title !== '' && author !== '') {
+	if (title !== '' || author !== '') {
 		const book = {
 			title: title,
 			author: author,
-			// category: category
+			category: category
 		}
 
 		bookList.push(book)
@@ -26,7 +26,7 @@ saveBtn.addEventListener('click', function() {
 		displayBooks(bookList)
 		titleInput.value = ''
 		authorInput.value = ''
-		// selectCategory.value = ''
+		selectCategory.value = ''
 	}
 })
 
@@ -39,16 +39,20 @@ function displayBooks(books) {
 		const bookCard = document.createElement('div')
 		bookCard.classList.add('book-card')
 
-		const title = document.createElement('h3')
+		const title = document.createElement('h2')
 		title.textContent = book.title
 		const author = document.createElement('p')
 		author.textContent = `Author: ${book.author}`
+		const category = document.createElement ('fieldset')
+		category.textContent = book.category
+		const deleteBtn = document.createElement('button')
+		deleteBtn.classList.add('deleteBtn')
 
 		bookCard.appendChild(title)
 		bookCard.appendChild(author)
+		bookCard.appendChild(category)
+		bookCard.appendChild(deleteBtn)
 		booksPanel.appendChild(bookCard)
-
-
 	});
 }
 
@@ -57,6 +61,3 @@ const closeBtn = document.getElementById('close')
   closeBtn.addEventListener('click', () => {
     dialog.close();
 	})
-
-
-	console.log('todo funciona')

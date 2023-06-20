@@ -23,16 +23,18 @@
 
 
   <dialog method="dialog" id="dialog">
-
+    <div class="category">
+      <label for="category">Choose Category</label>
       <select name="category" id="category">
-        <option value="choose category">Choose Category</option>
+        <option value="no category">No Categor</option>
         <option value="coding" style="background-color: aqua">Coding</option>
         <option value="business" style="background-color: rgba(190, 6, 251, 0.5)">Business</option>
         <option value="self-growth" style="background-color: rgb(117, 253, 147)">Self-Growth</option>
         <option value="novel" style="background-color: rgb(245, 248, 94)">Novel</option>
         <option value="classic" style="background-color: rgba(48, 143, 62, 0.4)">Classic</option>
       </select>
-     <div class="information">
+    </div>
+    <div class="information">
       <label for="title">Title</label>
       <input type="text" id="title-input">
       <label for="author">Author</label>
@@ -43,11 +45,9 @@
 
   </dialog>
 
-<!-- <main> -->
   <div id="books-panel">
-    
+
   </div>
-<!-- </main> -->
   <script src="script.js"></script>
 </body>
 
