@@ -6,8 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"> -->
   <title>Book List</title>
 </head>
 
@@ -15,25 +13,19 @@
 
 <header>
   <button onclick="dialog.showModal()"id="main-button">+</button>
-  <!-- <button onclick="dialog.showModal()" >+</button> -->
     <h1>Book List</h1>
-
-    <input type="text" class="search-bar" label="search" placeholder="SEARCH...">
 </header>
 
-
   <dialog method="dialog" id="dialog">
-    <div class="category">
       <label for="category">Choose Category</label>
-      <select name="category" id="category">
-        <option value="no category">No Categor</option>
-        <option value="coding" style="background-color: aqua">Coding</option>
-        <option value="business" style="background-color: rgba(190, 6, 251, 0.5)">Business</option>
-        <option value="self-growth" style="background-color: rgb(117, 253, 147)">Self-Growth</option>
-        <option value="novel" style="background-color: rgb(245, 248, 94)">Novel</option>
-        <option value="classic" style="background-color: rgba(48, 143, 62, 0.4)">Classic</option>
+      <select id="category">
+        <option value="no category"></option>
+        <option value="coding" class="coding">Coding</option>
+        <option value="business" class="business">Business</option>
+        <option value="self-growth" class="self-growth">Self-Growth</option>
+        <option value="novel" class="novel">Novel</option>
+        <option value="classic" class="classic">Classic</option>
       </select>
-    </div>
     <div class="information">
       <label for="title">Title</label>
       <input type="text" id="title-input">

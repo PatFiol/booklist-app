@@ -1,8 +1,8 @@
 :root {
   --light-color: hsl(41, 17%, 95%);
-  --dark-color: hsla(42, 72%, 7%, 0.68);
-  --yellow-paper-color: hsla(39, 77%, 83%, 0.8);
-  --medium-color: hsl(41, 25%, 25%);
+  --dark-color: hsla(42, 72%, 7%, 0.8);
+  --yellow-paper-color: hsla(39, 77%, 83%, 0.5);
+  --medium-color: hsla(41, 25%, 25%, 0.6);
   --border-radius: 1em;
 }
 
@@ -18,27 +18,25 @@ body {
   width: 100vw;
   display: flex;
   flex-flow: column nowrap;
-  background: var(--light-color);
+  background: var(--yellow-paper-color);
+  word-wrap: break-word;
 }
 
 h1 {
 padding: 1em 1.2em;
 font-size: 2rem;
+text-align: center;
 }
 
-.search-bar {
-  width: 30%;
-  margin-left: 2.8em;
-  padding: .5em;
-}
 #main-button {
-  font-size: 5em;
-  background: transparent;
-  border: 0;
-  cursor: pointer;
   position: absolute;
+  border: 0;
   right: 0;
   padding-right: .4em;
+  background: transparent;
+  font-size: 5em;
+  color: var(--dark-color);
+  cursor: pointer;
 }
 
 /* Books */
@@ -53,25 +51,27 @@ font-size: 2rem;
   justify-content: center;
 }
 
-/* BOOK CARDS */
+/* Book Cards */
 .book-card {
   position: relative;
   width: 400px;
   padding: 1em;
   margin: 1em;
-  background-color: rgba(232, 232, 209, 0.8);
-  box-shadow: -1px 1px 10px ;
+  background-color: var(--light-color);
+  box-shadow: -1px 1px 10px;
   display: grid;
+  gap: 1em;
 }
 
 fieldset {
   position: absolute;
-  border-radius: .2em;
+  border-top-right-radius: 1.5em;
   background-color: white;
   height: fit-content;
   width: fit-content;
   align-self: end;
-
+  border: none;
+  box-shadow: .2px -.2px 5px var(--medium-color);
 }
 
 .deleteBtn {
@@ -88,7 +88,7 @@ fieldset {
   cursor: pointer;
 }
 
-/* OVERLAY */
+/* Popup Overlay - Dialog */
 dialog {
   width: 80vmin;
   height: fit-content;
@@ -118,13 +118,6 @@ dialog select {
   font-weight: 600;
   font-size: 1.2rem;
   float: right;
-}
-
-.category {
-  float: right;
-  display: grid;
-  gap: .2em;
-  color: var(--light-color);
 }
 
 .information {
@@ -172,4 +165,21 @@ dialog button {
   color: rgb(31, 27, 27);
   font-size: 1.2em;
   padding: 0;
+}
+
+/* Category Colors */
+.business {
+  background-color: rgba(190, 6, 251, 0.6);
+}
+.coding {
+  background-color: rgba(0, 255, 255, 0.6);
+}
+.self-growth {
+  background-color: rgba(117, 253, 147, 0.6);
+}
+.novel {
+  background-color: rgba(48, 143, 62, 0.6);
+}
+.classic {
+  background-color: rgba(255, 37, 139, 0.6)
 }
