@@ -37,7 +37,7 @@ function displayBooks(books) {
 	books.forEach((book) => {
 		const bookCard = document.createElement('div')
 		bookCard.classList.add('book-card')
-		bookCard.setAttribute('data-category', book.category)
+		bookCard.setAttribute('data-category', book.category.toLowerCase().replace(/\s+/g, '-'))
 
 		const title = document.createElement('h3')
 		title.textContent = book.title
@@ -75,9 +75,42 @@ function displayBooks(books) {
 	})
 }
 
-	// Close Dialog Pop-up
-	const closeBtn = document.getElementById('close')
-	closeBtn.addEventListener('click', () => {
-		dialog.close()
-	})
+// Close Dialog Pop-up
+const closeBtn = document.getElementById('close')
+closeBtn.addEventListener('click', () => {
+	dialog.close()
+})
 
+// Filter by Categories
+// JavaScript function to filter book cards based on the selected category
+function filterBooksByCategory(category) {
+  const bookCards = document.querySelectorAll(".book-card");
+
+  bookCards.forEach((card) => {
+    const cardCategory = card.getAttribute("data-category");
+    if (category === "all" || cardCategory === category) {
+      card.style.display = "block";
+    } else {
+			card.style.display = "none";
+    }
+  });
+}
+
+// Add event listeners to each category button
+const categoryButtons = document.querySelectorAll(".category-title");
+
+categoryButtons.forEach((button) => {
+  button.addEventListener("click", function () {
+    // Remove "active" class from all buttons
+    categoryButtons.forEach((btn) => btn.classList.remove("active"));
+
+    // Add "active" class to the clicked button
+    this.classList.add("active");
+
+    // Get the category from the clicked button's class
+    const category = this.classList[1];
+
+    // Filter and display book cards based on the selected category
+    filterBooksByCategory(category);
+  });
+});

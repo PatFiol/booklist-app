@@ -113,7 +113,7 @@ h1 {
 	background-color: var(--light-color);
 	box-shadow: -1px 1px 10px;
 	display: grid;
-	gap: .8em;
+	gap: 1em;
   text-transform: capitalize;
 }
 
@@ -134,7 +134,7 @@ fieldset {
 	position: absolute;
 	right: -13px;
 	bottom: -13px;
-	padding: 0.7em;
+	padding: 1.1rem;
 	border-radius: 50%;
 	border: 1px solid red;
 	background-image: url(assets/delete-icon.png);
