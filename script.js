@@ -1,5 +1,5 @@
 const mainBtn = document.getElementById('main-button')
-const saveBtn = document.getElementById('save')
+const saveBtn = document.getElementById('save-btn')
 const titleInput = document.getElementById('title-input')
 const authorInput = document.getElementById('author-input')
 const category = document.getElementById('category')
@@ -7,9 +7,10 @@ const deleteBtn = document.getElementsByClassName('deleteBtn')
 const booksPanel = document.getElementById('books-panel')
 const bookCard = document.querySelectorAll('.book-card')
 const bookList = JSON.parse(localStorage.getItem('books')) || []
+const message = document.querySelector('.message')
 
 displayBooks(bookList)
-
+// Save Book entry
 saveBtn.addEventListener('click', function () {
 	const id = ''
 	const title = titleInput.value
@@ -22,7 +23,7 @@ saveBtn.addEventListener('click', function () {
 			author: author,
 			category: selectedCategory,
 		}
-
+// Add book entry
 		bookList.push(book)
 		localStorage.setItem('books', JSON.stringify(bookList))
 		displayBooks(bookList)
@@ -72,11 +73,12 @@ function displayBooks(books) {
 				localStorage.setItem('books', JSON.stringify(bookList))
 			}
 		})
+		message.style.display = 'none'
 	})
 }
 
 // Close Dialog Pop-up
-const closeBtn = document.getElementById('close')
+const closeBtn = document.getElementById('close-btn')
 closeBtn.addEventListener('click', () => {
 	dialog.close()
 })
@@ -89,9 +91,9 @@ function filterBooksByCategory(category) {
   bookCards.forEach((card) => {
     const cardCategory = card.getAttribute("data-category");
     if (category === "all" || cardCategory === category) {
-      card.style.display = "block";
+      card.classList.remove('hide');
     } else {
-			card.style.display = "none";
+			card.classList.add('hide');
     }
   });
 }
@@ -114,3 +116,12 @@ categoryButtons.forEach((button) => {
     filterBooksByCategory(category);
   });
 });
+
+// Message when there are no books
+if (bookList.length == 0) {
+	message.innerHTML = `
+	Your Book List is empty.
+	Add your first book from the top right corner...
+	`
+	message.style.display = "block"
+}

@@ -7,6 +7,7 @@
 	--border-radius: 1em;
 	--border-radius-label: .3em;
   --box-shadow: -1px 1px 10px var(--medium-color);
+	--transparent-background:  hsla(0, 0%, 0%, 0.242);
 }
 
 * {
@@ -20,7 +21,7 @@ body {
 	color: var(--dark-color);
 	width: 100vw;
 	background: var(--yellow-background-color);
-	word-break: break-all;
+	white-space: normal;
 }
 
 h1 {
@@ -36,7 +37,7 @@ h1 {
 	border: 0;
 	padding: 0.25em 0.5em;
   margin: .3em;
-	background: rgba(0, 0, 0, 0.242);
+	background: var(--transparent-background);
 	font-size: 2em;
 	color: var(--dark-color);
 	cursor: pointer;
@@ -49,20 +50,20 @@ h1 {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  padding: 1em;
+	gap: .3em;
+	padding-top: 2em;
 }
 
 .category-title {
   width: 6em;
-  padding: .38rem;
-  margin: 1em;
+  padding: .3rem 0;
+  margin: .2rem;
   border: 0;
   border-radius: var(--border-radius-label);
   box-shadow: var(--box-shadow);
   cursor: pointer;
   color: var(--yellow-paper-color);
-  font-size: 1em;
-	list-style: none;
+  font-size: .9rem;
 	text-align: center;
 }
 
@@ -92,12 +93,12 @@ h1 {
 	background-color: hsla(289, 63%, 52%, 0.8);
 }
 .no-category {
-	background-color: hsl(0, 0%, 65%);
+	background-color: hsl(0, 0%, 45%);
 }
 
 /* Books */
 #books-panel {
-	padding: 1em;
+	padding-top: 4em;
 	height: fit-content;
 	display: flex;
 	flex-flow: row wrap;
@@ -130,11 +131,15 @@ fieldset {
   padding: .4em;
 }
 
+.hide {
+	display: none;
+}
+
 .deleteBtn {
 	position: absolute;
 	right: -13px;
 	bottom: -13px;
-	padding: 1.1rem;
+	padding: 1.2rem;
 	border-radius: 50%;
 	border: 1px solid red;
 	background-image: url(assets/delete-icon.png);
@@ -151,10 +156,10 @@ fieldset {
 }
 /* Popup Overlay - Dialog */
 dialog {
-	width: 50vmin;
 	height: fit-content;
 	margin: 5em auto;
-	padding: 2em;
+	max-width: 95%;
+	padding: 1rem;
 	background-color: rgba(0, 0, 0, 0.5);
 	border: 1em;
 	border-radius: var(--border-radius);
@@ -180,7 +185,6 @@ dialog select {
 	font-size: 1.2rem;
 	float: right;
 	outline: 0;
-	width: 40%;
   border-radius: 0.3rem;
 }
 
@@ -198,7 +202,6 @@ dialog label {
 }
 
 .information input {
-	width: 100%;
 	height: 2.5em;
 	margin-bottom: 2em;
 	border-radius: 0.3em;
@@ -215,25 +218,51 @@ dialog label {
 	outline: none;
 }
 
-dialog button {
-	width: 4em;
+.buttons button{
 	border-radius: var(--border-radius);
 	padding: 0.5em;
-	margin: 1.6em 40% 0;
+	margin: 1.5rem;
 	font-size: 1.2rem;
 	font-weight: bold;
-	border: 0;
+	border: none;
 	border-radius: 1em;
 	cursor: pointer;
-}
+	margin-inline: 42%;
 
-#save:hover {
+}
+#save-btn {
+	background: var(--light-color);
+	color: var(--dark-color);
+}
+#save-btn:hover {
 	filter: invert();
 }
-
-#close {
+#close-btn {
 	background: transparent;
-	color: var(--light-color);
-	font-size: 1.2em;
+	color: var(--dark-color);
+	font-size: 3em;
+	margin: 1rem auto 0;
 	padding: 0;
+	width: 100%;
+}
+#close-btn:hover {
+	color: crimson;
+
+}
+
+.message {
+	text-align: center;
+	margin-top: 5rem;
+	padding: 2rem;
+	background: var(--transparent-background);
+	display: none;
+}
+
+@media screen and (min-width: 768px) {
+	.category-title {
+		font-size: 1rem;
+	}
+	dialog {
+		width: 30%;
+	}
 }

@@ -6,79 +6,84 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>Book List</title>
 </head>
 
 <body>
 
-<header>
-  <button onclick="dialog.showModal()"id="main-button">+</button>
+  <header>
+    <button onclick="dialog.showModal()" id="main-button">+</button>
     <h1>Book List</h1>
 
     <div class="category-container">
-      <div class = "category-title active all">
-        <span><i class = "fa solid fa-border-all"></i></span>
+      <div class="category-title active all">
+        <span><i class="fa solid fa-border-all"></i></span>
         <p>All Books</p>
-    </div>
-    <div class = "category-title coding">
-      <span><i class="fa-solid fa-laptop-code"></i></span>
+      </div>
+      <div class="category-title coding">
+        <span><i class="fa-solid fa-laptop-code"></i></span>
         <p>Coding</p>
-    </div>
-    <div class = "category-title business">
-      <span><i class="fa-solid fa-money-check-dollar"></i></span>
+      </div>
+      <div class="category-title business">
+        <span><i class="fa-solid fa-money-check-dollar"></i></span>
         <p>Business</p>
-    </div>
-    <div class = "category-title self-growth">
-      <span><i class="fa-solid fa-seedling"></i></span>
+      </div>
+      <div class="category-title self-growth">
+        <span><i class="fa-solid fa-seedling"></i></span>
         <p>Self-growth</p>
-    </div>
-    <div class = "category-title history">
-      <span><i class="fa-solid fa-landmark"></i></span>
+      </div>
+      <div class="category-title history">
+        <span><i class="fa-solid fa-landmark"></i></span>
         <p>History</p>
-    </div>
-    <div class = "category-title science">
-      <span><i class="fa-solid fa-atom"></i></span>
+      </div>
+      <div class="category-title science">
+        <span><i class="fa-solid fa-atom"></i></span>
         <p>Science</p>
-    </div>
-    <div class = "category-title health">
-      <span><i class="fa-solid fa-staff-snake"></i></span>
+      </div>
+      <div class="category-title health">
+        <span><i class="fa-solid fa-staff-snake"></i></span>
         <p>Health</p>
-    </div>
-    <div class = "category-title fiction">
-      <span><i class="fa-solid fa-masks-theater"></i></span>
+      </div>
+      <div class="category-title fiction">
+        <span><i class="fa-solid fa-masks-theater"></i></span>
         <p>Fiction</p>
-    </div>
-    <div class = "category-title no-category">
-      <span><i class="fa-regular fa-square"></i></span>
+      </div>
+      <div class="category-title no-category">
+        <span><i class="fa-regular fa-square"></i></span>
         <p>No Category</p>
+      </div>
     </div>
-  </div>
-</header>
 
+  </header>
 
   <dialog method="dialog" id="dialog">
-  <label for="category">Category</label>
-  <select id="category">
-    <option value="no category" class="no-category">No category</option>
-    <option value="coding" class="coding">Coding</option>
-    <option value="business" class="business">Business</option>
-    <option value="self-growth" class="self-growth">Self-Growth</option>
-    <option value="history" class="history">History</option>
-    <option value="science" class="science">Science</option>
-    <option value="health" class="health">Health</option>
-    <option value="Fiction" class="fiction">Fiction</option>
-  </select>
+    <label for="category">Category</label>
+    <select id="category">
+      <option value="no category" class="no-category">No category</option>
+      <option value="coding" class="coding">Coding</option>
+      <option value="business" class="business">Business</option>
+      <option value="self-growth" class="self-growth">Self-Growth</option>
+      <option value="history" class="history">History</option>
+      <option value="science" class="science">Science</option>
+      <option value="health" class="health">Health</option>
+      <option value="Fiction" class="fiction">Fiction</option>
+    </select>
     <div class="information">
       <label for="title">Title</label>
       <input type="text" id="title-input">
       <label for="author">Author</label>
       <input type="text" id="author-input">
     </div>
-    <button type="click" id="save">save</button>
-    <button type="button" id="close">CLOSE</button>
+    <div class="buttons">
+      <button type="click" id="save-btn">save</button>
+      <button type="button" id="close-btn">X</button>
+    </div>
   </dialog>
-
+  <div class="message">
+  </div>
   <div id="books-panel">
   </div>
   <script src="script.js" defer></script>
