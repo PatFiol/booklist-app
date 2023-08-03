@@ -22,6 +22,7 @@ body {
 	width: 100vw;
 	background: var(--yellow-background-color);
 	white-space: normal;
+	text-transform: capitalize;
 }
 
 h1 {
@@ -51,7 +52,7 @@ h1 {
   flex-flow: row wrap;
   justify-content: center;
 	gap: .3em;
-	padding-top: 2em;
+	padding: 1em;
 }
 
 .category-title {
@@ -115,7 +116,6 @@ h1 {
 	box-shadow: -1px 1px 10px;
 	display: grid;
 	gap: 1em;
-  text-transform: capitalize;
 }
 
 fieldset {
@@ -154,6 +154,7 @@ fieldset {
 .deleteBtn:hover {
 	filter: invert(100%);
 }
+
 /* Popup Overlay - Dialog */
 dialog {
 	height: fit-content;
@@ -177,6 +178,7 @@ dialog {
 		scale: 1;
 	}
 }
+
 dialog select {
 	margin-bottom: 4em;
 	background-color: rgba(212, 232, 233, 0.874);
@@ -227,8 +229,7 @@ dialog label {
 	border: none;
 	border-radius: 1em;
 	cursor: pointer;
-	margin-inline: 42%;
-
+	margin-inline: 40%;
 }
 #save-btn {
 	background: var(--light-color);
@@ -247,22 +248,19 @@ dialog label {
 }
 #close-btn:hover {
 	color: crimson;
-
 }
 
 .message {
 	text-align: center;
-	margin-top: 5rem;
+	margin-top: 4rem;
 	padding: 2rem;
 	background: var(--transparent-background);
 	display: none;
 }
 
+
 @media screen and (min-width: 768px) {
 	.category-title {
 		font-size: 1rem;
-	}
-	dialog {
-		width: 30%;
 	}
 }
